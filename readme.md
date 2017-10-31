@@ -11,3 +11,4 @@ The gamma and beta parameters are learned during training.
 This transform uses next to no computation, compared to convolutional layers.  In practice though, the extra steps in the computational graph can incur quite a bit of overhead, especially on GPUs.  Additionally this is another layer type that you need to include in your deployed model.
 
 Fortunately the Batch Normalisation transform is just a linear transform and therefore can be combined with the base convolution weights & bias.
+
