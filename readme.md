@@ -12,5 +12,4 @@ This transform uses next to no computation, compared to convolutional layers.  I
 
 Fortunately the Batch Normalisation transform is just a linear transform and therefore can be combined with the base convolution weights & bias.
 
-![alt-text](https://github.com/pieterluitjens/Merge_Batch_Norm/blob/master/Remove%20BN%20Transform.pdf)
-<img src="https://github.com/pieterluitjens/Merge_Batch_Norm/blob/master/Remove%20BN%20Transform.pdf">
+![math is here](https://github.com/pieterluitjens/Merge_Batch_Norm/blob/master/Remove%20BN%20Transform.pdf)
