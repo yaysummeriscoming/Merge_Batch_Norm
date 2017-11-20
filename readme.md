@@ -1,10 +1,17 @@
-This project contains Keras implementations of the BinaryNet and XNORNet papers:
+This project contains a simple script showing how to merge the Batch Normalisation transform into each preceding convolutional layer.
 
-[Binarized Neural Networks: Training Deep Neural Networks with Weights and Activations Constrained to +1 or -1](https://arxiv.org/abs/1602.02830)
+[Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
 
+Background:
 
-[XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks](https://arxiv.org/abs/1603.05279)
+The batch normalisation transform has now become one of the base ingredients when training CNNs.  The transform can be described as:
+<include transform>
+The gamma and beta parameters are learned during training.
 
-Code supports the Tensorflow and Theano backends.
+This transform uses next to no computation, compared to convolutional layers.  In practice though, the extra steps in the computational graph can incur quite a bit of overhead, especially on GPUs.  Additionally this is another layer type that you need to include in your deployed model.
 
-The most difficult part of coding these implementations was the sign function gradient.  I’ve used the clipped ‘passthrough’ sign implementation detailed in the BinaryNet paper.  The XNORNet doesn’t mention anything, so I’ve used the same implementation here too.
+Fortunately the Batch Normalisation transform is just a linear transform and therefore can be combined with the base convolution weights & bias.
+
+![math is here](https://github.com/pieterluitjens/Merge_Batch_Norm/blob/master/Remove%20BN%20Transform.pdf)
+
+NOTE: This code is Python 3 compatible only!
