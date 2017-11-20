@@ -22,12 +22,12 @@ def CreateModel(input_shape, nb_classes, parameters):
 
     layerType = ConvBNReluLayer
 
-    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(3, 3), stride=(1, 1))
-    # output = layerType(input=output, nb_filters=32, border='valid', kernel_size=(3, 3), stride=(1, 1))
-    # output = layerType(input=output, nb_filters=32, border='valid', kernel_size=(3, 3), stride=(1, 1))
-    # output = layerType(input=output, nb_filters=32, border='valid', kernel_size=(3, 3), stride=(1, 1))
-    # output = layerType(input=output, nb_filters=32, border='valid', kernel_size=(3, 3), stride=(1, 1))
-    # output = layerType(input=output, nb_filters=32, border='valid', kernel_size=(3, 3), stride=(1, 1))
+    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(2, 2), stride=(2, 2))
+    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(2, 2), stride=(2, 2))
+    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(2, 2), stride=(1, 1))
+    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(2, 2), stride=(1, 1))
+    output = layerType(input=output, nb_filters=16, border='valid', kernel_size=(2, 2), stride=(1, 1))
+
 
     output = Flatten()(output)
     output = Dense(nb_classes, use_bias=True, activation='softmax')(output)
@@ -51,8 +51,6 @@ parameters.batch_size = 32
 parameters.lr = 0.0005
 parameters.batch_scale_factor = 8
 parameters.decay = 0.001
-
-parameters.binarisation_type = 'BinaryNet' # Either 'BinaryNet' or 'XNORNet'
 
 parameters.lr *= parameters.batch_scale_factor
 parameters.batch_size *= parameters.batch_scale_factor

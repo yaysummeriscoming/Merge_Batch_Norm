@@ -2,6 +2,8 @@ This project contains a simple script showing how to merge the Batch Normalisati
 
 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
 
+Note: This script currently only supports a linear stack of layers & 2D convolutions.
+
 Background:
 
 The batch normalisation transform has now become one of the base ingredients when training CNNs.  The transform can be described as:
