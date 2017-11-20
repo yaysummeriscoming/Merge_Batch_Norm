@@ -43,12 +43,7 @@ def CreateModel(input_shape, nb_classes, parameters):
 ############################
 # Parameters
 
-
-if os.name == 'posix':
-    modelDirectory = '/Volumes/MacStorage/DeepLearningData/current_RemoveBN/'
-else:
-    modelDirectory = 'F:/DeepLearning/models/current_RemoveBN/'
-
+modelDirectory = os.getcwd()
 
 parameters = NetworkParameters(modelDirectory)
 parameters.nb_epochs = 1
